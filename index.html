@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Piyush Cloth Collection — Customer Feedback</title>
+  <meta name="description"
+    content="Share your shopping experience with Piyush Cloth Collection, Kathera. We value your feedback!">
+
+  <!-- Mobile Web App Meta -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#080a10">
+
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Application Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- SVG Defs for Metallic Gold Star Fill -->
+  <svg width="0" height="0" style="position: absolute; width:0; height:0;">
+    <defs>
+      <linearGradient id="gold-gradient-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#fef08a" />
+        <stop offset="40%" stop-color="#f59e0b" />
+        <stop offset="100%" stop-color="#b45309" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- Full Screen Animated Fluid Mesh Background -->
+  <div class="fluid-mesh-bg">
+    <div class="mesh-orb orb-gold"></div>
+    <div class="mesh-orb orb-emerald"></div>
+    <div class="mesh-orb orb-indigo"></div>
+    <div class="mesh-pattern"></div>
+  </div>
+
+  <!-- Confetti Canvas Layer -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Full-Screen Viewport Container -->
+  <div class="app-viewport">
+
+    <!-- Top Brand Navbar -->
+    <header class="app-navbar">
+      <div class="nav-brand">
+        <div class="nav-logo-emblem">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+          </svg>
+        </div>
+        <div class="nav-brand-text">
+          <span class="nav-title">Piyush Cloth Collection</span>
+          <span class="nav-badge">Fashion & Quality Apparel</span>
+        </div>
+      </div>
+      <div class="nav-tag">
+        <span class="status-dot"></span>
+        <span>Kathera • Official Feedback</span>
+      </div>
+    </header>
+
+    <!-- SINGLE UNIFIED BOUTIQUE FEEDBACK CARD -->
+    <main class="single-feedback-card glass-panel">
+
+      <!-- Integrated Hero Banner Header -->
+      <div class="hero-banner-container">
+        <img src="assets/banner.png" alt="Piyush Cloth Collection Boutique" class="banner-img">
+        <div class="banner-overlay"></div>
+      </div>
+
+      <!-- Shop Brand Header Content -->
+      <header class="hero-brand-header">
+        <div class="royal-emblem">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+          </svg>
+          <span>Piyush Cloth Collection • Kathera</span>
+        </div>
+
+        <h1 id="shop-title" class="shop-title">“How was your shopping experience with us today?”</h1>
+        <!-- <p id="shop-subtitle" class="shop-quote">“How was your shopping experience with us today?”</p> -->
+      </header>
+
+      <!-- Step 1: 3D Star Rating Selector -->
+      <section class="rating-section" aria-label="Customer Star Rating">
+        <div id="stars-wrapper" class="stars-track" role="radiogroup" aria-label="Select Rating">
+          <button type="button" class="star-btn" data-star="1" aria-label="Rate 1 Star">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+            </svg>
+          </button>
+          <button type="button" class="star-btn" data-star="2" aria-label="Rate 2 Stars">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+            </svg>
+          </button>
+          <button type="button" class="star-btn" data-star="3" aria-label="Rate 3 Stars">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+            </svg>
+          </button>
+          <button type="button" class="star-btn" data-star="4" aria-label="Rate 4 Stars">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+            </svg>
+          </button>
+          <button type="button" class="star-btn" data-star="5" aria-label="Rate 5 Stars">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Dynamic Rating Emotion Badge -->
+        <div class="rating-badge-container">
+          <span id="rating-badge" class="rating-badge"></span>
+        </div>
+      </section>
+
+      <!-- Step 2: Dynamic Collapsible Feedback Options -->
+      <section id="step-two-container" class="step-two-container">
+
+        <p id="step-message" class="step-prompt-text"></p>
+
+        <!-- Suggested Reviews Horizontal Slider Carousel -->
+        <div class="carousel-section">
+          <div class="carousel-header">
+            <div class="carousel-title">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+              </svg>
+              <span>SELECT A QUICK FEEDBACK:</span>
+            </div>
+            <!-- Slider Arrow Controls -->
+            <div class="slider-controls">
+              <button id="slider-prev" type="button" class="slider-arrow" aria-label="Previous Suggestion">
+                <svg viewBox="0 0 24 24">
+                  <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                </svg>
+              </button>
+              <button id="slider-next" type="button" class="slider-arrow" aria-label="Next Suggestion">
+                <svg viewBox="0 0 24 24">
+                  <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Horizontal Sliding Track -->
+          <div class="chips-slider-wrapper">
+            <div id="chips-slider-track" class="chips-slider-track">
+              <!-- Dynamically populated review cards -->
+            </div>
+          </div>
+
+          <!-- Pagination Dots -->
+          <div id="slider-dots" class="slider-dots-container"></div>
+        </div>
+
+        <!-- Custom Feedback Input Box -->
+        <div class="textarea-box">
+          <label for="custom-textarea" class="textarea-label">Or customize your review:</label>
+          <textarea id="custom-textarea" class="custom-textarea" placeholder="Write your custom feedback here..."
+            rows="3"></textarea>
+        </div>
+
+        <!-- Shimmering Liquid Action Button -->
+        <button id="action-btn" type="button" class="btn-primary btn-gold">
+          <svg id="action-btn-icon" class="btn-icon" viewBox="0 0 24 24"></svg>
+          <span id="action-btn-text">Copy & Review on Google</span>
+        </button>
+
+      </section>
+
+      <!-- Step 3: Success Screen (For 1–3 Stars) -->
+      <section id="success-screen" class="success-screen-card">
+        <div class="success-icon-badge">
+          <svg viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </div>
+        <h2 class="success-title">Feedback Received</h2>
+        <p class="success-desc">
+          Thank you for sharing your experience with <strong>Piyush Cloth Collection</strong>. Your feedback helps us
+          continually elevate our quality and service!
+        </p>
+        <button id="reset-btn" type="button" class="btn-secondary">
+          Submit Another Feedback
+        </button>
+      </section>
+
+    </main>
+
+    <!-- Footer Credit -->
+    <footer class="app-footer">
+      <span>© Piyush Cloth Collection, Kathera</span> • <span>NFC Touch Experience</span>
+    </footer>
+
+  </div>
+
+  <!-- Toast Notification Alert -->
+  <div id="toast-notification" class="toast-banner" role="alert">
+    <svg class="toast-icon" viewBox="0 0 24 24">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+    </svg>
+    <span id="toast-message">Review copied! Opening Google Reviews...</span>
+  </div>
+
+  <!-- JS Configurations & Application Logic -->
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+
+</body>
+
+</html>
