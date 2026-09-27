@@ -98,21 +98,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- Array Shuffle Helper (Fisher-Yates) ---
+  function shuffleArray(array) {
+    if (!Array.isArray(array)) return [];
+    const arr = [...array];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
   // --- Step 2 Renderer ---
   function renderStepTwo(rating) {
     stepTwoContainer.classList.add('active');
 
     const threshold = typeof GOOGLE_REVIEW_THRESHOLD !== 'undefined' ? GOOGLE_REVIEW_THRESHOLD : 4;
 
-    // if (rating >= threshold) {
-    //   // stepMessageEl.textContent = "SELECT A QUICK FEEDBACK:";
-    // } else if (rating === 3) {
-    //   stepMessageEl.textContent = "Thank you for your feedback! Please let us know how we can make your next visit even better:";
-    // } else {
-    //   stepMessageEl.textContent = "We're sorry your experience wasn't perfect. Please tell us how we can improve:";
-    // }
-
-    const suggestions = (typeof SUGGESTED_COMMENTS !== 'undefined' && SUGGESTED_COMMENTS[rating]) ? SUGGESTED_COMMENTS[rating] : [];
+    const rawSuggestions = (typeof SUGGESTED_COMMENTS !== 'undefined' && SUGGESTED_COMMENTS[rating]) ? SUGGESTED_COMMENTS[rating] : [];
+    const suggestions = shuffleArray(rawSuggestions);
     chipsSliderTrack.innerHTML = '';
     sliderDotsContainer.innerHTML = '';
     selectedComment = '';

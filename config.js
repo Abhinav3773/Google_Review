@@ -29,22 +29,29 @@ const SUGGESTED_COMMENTS = {
     "Excellent collection and top quality clothes! Really happy with my purchase.",
     "Amazing shopping experience! Great collection of ethnic and modern wear with very helpful staff.",
     "Loved the fabric quality and wide variety of options. Highly recommended!",
-    "Best cloth shop in town! Great prices, friendly staff, and premium fashion quality."
+    "Best cloth shop in town! Great prices, friendly staff, and premium fashion quality.",
+    "Wonderful variety of clothes and very polite staff behavior. A 5-star shopping experience!",
+    "Superb quality apparel and awesome fitting. Will definitely shop here again!",
+    "Great customer service, genuine prices, and beautiful fashion collection."
   ],
   4: [
     "Great cloth collection and good overall shopping experience.",
     "Nice products and polite staff. Had a smooth and pleasant shopping experience.",
-    "Good quality clothing and variety. Will definitely visit again!"
+    "Good quality clothing and variety. Will definitely visit again!",
+    "Very nice collection of dresses and polite staff assistance.",
+    "Happy with my purchase. Good variety and reasonable pricing."
   ],
   3: [
     "Decent experience. Good collection of clothes, but there is room for improvement.",
     "Good variety of apparel, though waiting time at the counter could be improved.",
-    "Average shopping experience. Quality is okay for the price."
+    "Average shopping experience. Quality is okay for the price.",
+    "Good stock of clothes, but service speed can be enhanced."
   ],
   2: [
     "The shopping experience was okay, but several areas need improvement.",
     "Did not find enough variety in my preferred size.",
-    "Staff assistance could have been better during busy hours."
+    "Staff assistance could have been better during busy hours.",
+    "Quality was average for the price charged."
   ],
   1: [
     "I was not satisfied with my shopping experience today.",
@@ -52,6 +59,7 @@ const SUGGESTED_COMMENTS = {
     "Needs significant improvement in customer service and stock organization."
   ]
 };
+
 
 // Ratings threshold for Google Review redirection
 const GOOGLE_REVIEW_THRESHOLD = 4;
