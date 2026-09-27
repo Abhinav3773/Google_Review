@@ -250,6 +250,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- Smart Google Review URL Resolver ---
+  function getGoogleReviewUrl() {
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+    if (isMobile && typeof GOOGLE_REVIEW_MOBILE_URL !== 'undefined' && GOOGLE_REVIEW_MOBILE_URL) {
+      return GOOGLE_REVIEW_MOBILE_URL;
+    }
+    if (!isMobile && typeof GOOGLE_REVIEW_DESKTOP_URL !== 'undefined' && GOOGLE_REVIEW_DESKTOP_URL) {
+      return GOOGLE_REVIEW_DESKTOP_URL;
+    }
+    return (typeof GOOGLE_REVIEW_URL !== 'undefined' && GOOGLE_REVIEW_URL)
+      ? GOOGLE_REVIEW_URL
+      : "https://search.google.com/local/writereview?placeid=ChIJ3zoA0iBGDTkRw4rfeKkNgPs";
+  }
+
   // --- Action Button Click Handler ---
   actionBtn.addEventListener('click', async () => {
     if (!selectedRating) return;
@@ -266,9 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       setTimeout(() => {
-        const redirectUrl = (typeof GOOGLE_REVIEW_URL !== 'undefined' && GOOGLE_REVIEW_URL)
-          ? GOOGLE_REVIEW_URL
-          : "https://www.google.com/search?q=piyush+cloth+collection+kathera+review#lrd=0x39094620d2003a4f:0xfb800da978df8ac3,3,,,,";
+        const redirectUrl = getGoogleReviewUrl();
         window.location.href = redirectUrl;
       }, 1200);
 

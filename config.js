@@ -3,8 +3,16 @@
  * Easily update the Google Review URL and suggested review comments here.
  */
 
-// 📍 Piyush Cloth Collection Kathera - Direct Google Review Modal Link
-const GOOGLE_REVIEW_URL = "https://www.google.com/search?q=piyush+cloth+collection+kathera+review#lrd=0x39094620d2003a4f:0xfb800da978df8ac3,3,,,,";
+// 📍 Piyush Cloth Collection Kathera - Direct Google Review Links
+// Mobile direct review link (opens review modal directly on iOS & Android browsers)
+const GOOGLE_REVIEW_MOBILE_URL = "https://search.google.com/local/writereview?placeid=ChIJ3zoA0iBGDTkRw4rfeKkNgPs";
+
+// Desktop search review modal link
+const GOOGLE_REVIEW_DESKTOP_URL = "https://www.google.com/search?q=piyush+cloth+collection+kathera+review#lrd=0x39094620d2003a4f:0xfb800da978df8ac3,3,,,,";
+
+// Fallback primary URL
+const GOOGLE_REVIEW_URL = "https://search.google.com/local/writereview?placeid=ChIJ3zoA0iBGDTkRw4rfeKkNgPs";
+
 
 
 // 🛍️ Shop Details
